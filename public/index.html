@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorkIQ - Microsoft 365 Intelligence</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <rect width="40" height="40" rx="8" fill="#0078D4"/>
+                    <path d="M20 10L28 14V20C28 25 24 28 20 30C16 28 12 25 12 20V14L20 10Z" fill="white"/>
+                </svg>
+                <h1>WorkIQ</h1>
+            </div>
+            <div class="status" id="status">
+                <span class="status-dot"></span>
+                <span class="status-text">Checking connection...</span>
+            </div>
+        </header>
+
+        <main>
+            <div class="hero">
+                <h2>Microsoft 365 Workplace Intelligence</h2>
+                <p>Query your emails, meetings, documents, and team information using natural language</p>
+            </div>
+
+            <div class="query-section">
+                <div class="query-examples">
+                    <h3>Try asking:</h3>
+                    <div class="examples">
+                        <button class="example-btn" data-query="emails from John about project X">📧 Emails from John about project X</button>
+                        <button class="example-btn" data-query="meetings this week">📅 Meetings this week</button>
+                        <button class="example-btn" data-query="documents about Q4 planning">📄 Documents about Q4 planning</button>
+                        <button class="example-btn" data-query="what is Sarah working on?">👥 What is Sarah working on?</button>
+                    </div>
+                </div>
+
+                <div class="query-form">
+                    <div class="input-group">
+                        <textarea 
+                            id="queryInput" 
+                            placeholder="Ask a question about your workplace data..."
+                            rows="3"
+                        ></textarea>
+                        <button id="submitBtn" class="submit-btn">
+                            <span class="btn-text">Ask WorkIQ</span>
+                            <span class="btn-icon">🚀</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="results-section" id="resultsSection" style="display: none;">
+                <div class="results-header">
+                    <h3>Response</h3>
+                    <button id="clearBtn" class="clear-btn">Clear</button>
+                </div>
+                <div class="results-content">
+                    <div id="loadingIndicator" class="loading" style="display: none;">
+                        <div class="spinner"></div>
+                        <p>Querying WorkIQ...</p>
+                    </div>
+                    <div id="results" class="results"></div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <p>Powered by <strong>WorkIQ MCP Server</strong> • Microsoft 365 Copilot Data</p>
+                <div class="tools-info" id="toolsInfo"></div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
