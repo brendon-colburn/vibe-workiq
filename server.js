@@ -12,7 +12,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Middleware
-app.use(cors());
+app.use(cors()); // Note: For production, restrict origins: cors({ origin: 'https://yourdomain.com' })
 app.use(express.json());
 app.use(express.static('public'));
 
@@ -122,6 +122,7 @@ app.post('/api/query', async (req, res) => {
 });
 
 // Serve index.html for root path
+// Note: Rate limiting not implemented as this is intended for local development use only
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
