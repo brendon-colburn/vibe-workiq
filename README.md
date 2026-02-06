@@ -1,6 +1,6 @@
 # WorkIQ MCP Client
 
-A Node.js CLI application that connects to the WorkIQ MCP server to query Microsoft 365 workplace intelligence.
+A Node.js application with both CLI and Web UI that connects to the WorkIQ MCP server to query Microsoft 365 workplace intelligence.
 
 ## What is WorkIQ?
 
@@ -25,11 +25,27 @@ npm install
 
 ## Usage
 
+### Web UI (Recommended)
+
+```bash
+npm run web
+```
+
+Then open your browser to http://localhost:3000
+
+The web interface provides:
+- Modern, intuitive UI for querying WorkIQ
+- Quick example queries to get started
+- Real-time connection status
+- Easy-to-read response formatting
+
+### CLI
+
 ```bash
 npm start
 ```
 
-The app will:
+The CLI app will:
 1. Connect to the WorkIQ MCP server via stdio
 2. List available tools
 3. Allow you to query M365 data interactively
@@ -69,7 +85,12 @@ const result = await client.callTool({
 
 ```
 vibe-workiq/
-├── index.js        # MCP client application
+├── index.js        # CLI client application
+├── server.js       # Web server with API endpoints
+├── public/         # Frontend web UI
+│   ├── index.html  # Main HTML page
+│   ├── styles.css  # UI styling
+│   └── app.js      # Client-side JavaScript
 ├── package.json    # Project configuration
 └── README.md       # This file
 ```
